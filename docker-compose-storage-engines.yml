@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  mongodb_mmapv1:
+    image: mongo:4.0-xenial
+    command: mongod --storageEngine mmapv1 --bind_ip_all
+    ports:
+      - "27017:27017"
+
+  mongodb_wiredtiger:
+    image: mongo
+    command: mongod --storageEngine wiredTiger --bind_ip_all
+    ports:
+      - "27018:27017"
+
+  mongodb_secure:
+    image: mongo
+    command: mongod --auth --bind_ip_all
+    ports:
+      - "27019:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
