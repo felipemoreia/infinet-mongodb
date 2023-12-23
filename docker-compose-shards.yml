@@ -22,6 +22,7 @@ services:
     volumes:
       - /mongo_cluster/data2:/data/db
       - /etc/localtime:/etc/localtime:ro
+
   mongors1n3:
     container_name: mongors1n3
     image: mongo
@@ -33,6 +34,7 @@ services:
     volumes:
       - /mongo_cluster/data3:/data/db
       - /etc/localtime:/etc/localtime:ro
+
   mongors1n4:
     container_name: mongors1n4
     image: mongo
@@ -42,7 +44,7 @@ services:
     expose:
       - "27017"
     volumes:
-      - /mongo_cluster/data3:/data/db
+      - /mongo_cluster/data4:/data/db
       - /etc/localtime:/etc/localtime:ro
 
   mongocfg1:
